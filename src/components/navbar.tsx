@@ -6,9 +6,38 @@ import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Menu } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const menuItems = ["Home", "Services", "Resume", "Work", "Contact"];
+  const pathName = usePathname();
+
+  const menuItems = [
+    {
+      label: "Home",
+      path: "/",
+    },
+    {
+      label: "Education",
+      path: "/education",
+    },
+    {
+      label: "Projects",
+      path: "/projects",
+    },
+    {
+      label: "Skill",
+      path: "/skill",
+    },
+
+    {
+      label: "Blog",
+      path: "/blog",
+    },
+    {
+      label: "Contact",
+      path: "/contact",
+    },
+  ];
 
   const container = {
     hidden: { opacity: 0 },
@@ -44,14 +73,17 @@ export default function Navbar() {
         animate="show"
       >
         {menuItems.map((item, index) => (
-          <motion.div key={index} variants={item}>
+          <motion.div key={index} variants={item.label}>
             <Link
-              href={`#${item.toLowerCase()}`}
-              className={`hover:text-emerald-400 transition-colors ${
-                item === "Home" ? "text-emerald-400" : "text-gray-300"
-              }`}
+              href={`${item.path}`}
+              className={`hover:text-emerald-400 transition-colors 
+                ${
+                  pathName === item.path
+                    ? "text-emerald-400 font-bold pb-1 border-b-4 border-emerald-400 "
+                    : "text-gray-300"
+                }`}
             >
-              {item}
+              {item.label}
             </Link>
           </motion.div>
         ))}
@@ -69,7 +101,7 @@ export default function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="text-gray-300 hover:text-emerald-400"
+              className="text-gray-300 hover:text-gray-800 hover:bg-emerald-400"
             >
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle menu</span>
@@ -83,18 +115,20 @@ export default function Navbar() {
               <AnimatePresence>
                 {menuItems.map((item, index) => (
                   <motion.div
-                    key={item}
+                    key={index}
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: index * 0.1 }}
                   >
                     <Link
-                      href={`#${item.toLowerCase()}`}
+                      href={`${item.path}`}
                       className={`block py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors ${
-                        item === "Home" ? "text-emerald-400" : "text-gray-300"
+                        pathName === item.path
+                          ? "text-emerald-400"
+                          : "text-gray-300"
                       }`}
                     >
-                      {item}
+                      {item.label}
                     </Link>
                   </motion.div>
                 ))}
