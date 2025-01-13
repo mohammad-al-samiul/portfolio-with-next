@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { motion } from "framer-motion";
@@ -108,7 +106,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="grid grid-cols-4 gap-8 px-8"
+          className="grid grid-cols-4 gap-8 lg:px-8 px-2"
         >
           {stats.map((stat, index) => (
             <div key={index}>

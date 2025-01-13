@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -7,6 +8,7 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Menu } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 export default function Navbar() {
   const pathName = usePathname();
@@ -73,7 +75,7 @@ export default function Navbar() {
         animate="show"
       >
         {menuItems.map((item, index) => (
-          <motion.div key={index} variants={item.label}>
+          <motion.div key={index}>
             <Link
               href={`${item.path}`}
               className={`hover:text-emerald-400 transition-colors 
@@ -111,6 +113,9 @@ export default function Navbar() {
             side="right"
             className="w-[300px] bg-gray-900 border-gray-800"
           >
+            <VisuallyHidden>
+              <DialogTitle>Navigation Menu</DialogTitle>
+            </VisuallyHidden>
             <nav className="flex flex-col gap-4 mt-8">
               <AnimatePresence>
                 {menuItems.map((item, index) => (

@@ -1,8 +1,8 @@
-import Hero from "@/components/ui/ui/Hero";
+import Hero from "@/components/ui/Hero";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div>
       <Hero />
     </div>
   );
