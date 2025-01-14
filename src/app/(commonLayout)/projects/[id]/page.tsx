@@ -120,15 +120,23 @@ const projects = [
   },
 ];
 
-export default async function Page({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function Page({ params }: PageProps) {
   const { id } = await params;
   const project = projects.find((p) => p.id === parseInt(id));
+
   if (!project) {
     return notFound();
   }
-  return (
-    <div>
-      <ProjectDetail project={project} />
-    </div>
-  );
+
+  return <ProjectDetail project={project} />;
+}
+
+export function generateStaticParams() {
+  return projects.map((project) => ({
+    id: project.id.toString(),
+  }));
 }

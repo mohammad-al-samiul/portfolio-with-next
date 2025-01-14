@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Github, Linkedin, Mail, Facebook } from "lucide-react";
+import { Github, Linkedin, Facebook } from "lucide-react";
 
 const socialLinks = [
   {
@@ -20,16 +20,14 @@ const socialLinks = [
     icon: Facebook,
     url: "https://www.facebook.com/alsamiul1996",
   },
-
-  { name: "Email", icon: Mail, url: "mailto:alsamiul123@gmail.com" },
 ];
 
 const quickLinks = [
-  { name: "Home", url: "#home" },
-  { name: "About", url: "#about" },
-  { name: "Projects", url: "#projects" },
-  { name: "Skills", url: "#skills" },
-  { name: "Contact", url: "#contact" },
+  { name: "Home", url: "/" },
+  { name: "Education", url: "/education" },
+  { name: "Projects", url: "/projects" },
+  { name: "Skills", url: "/skills" },
+  { name: "Contact", url: "/contact" },
 ];
 
 export default function Footer() {

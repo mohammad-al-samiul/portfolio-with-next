@@ -8,6 +8,9 @@ const robotoMono = Roboto_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata: Metadata = {
   title: "Samiul | Software Engineer ",
   description: "Explore Al Samiul's journey as a software engineer",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
