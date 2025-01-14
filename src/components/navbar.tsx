@@ -31,10 +31,10 @@ export default function Navbar() {
       path: "/skill",
     },
 
-    {
-      label: "Blog",
-      path: "/blog",
-    },
+    // {
+    //   label: "Blog",
+    //   path: "/blog",
+    // },
     {
       label: "Contact",
       path: "/contact",

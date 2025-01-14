@@ -46,7 +46,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
           <motion.img
             src={project.image}
             alt={project.title}
-            className="w-full h-64 object-cover rounded-lg mb-8"
+            className="w-full h-full object-cover rounded-lg mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
