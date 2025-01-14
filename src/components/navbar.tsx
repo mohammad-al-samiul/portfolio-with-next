@@ -51,11 +51,6 @@ export default function Navbar() {
     },
   };
 
-  const item = {
-    hidden: { y: -20, opacity: 0 },
-    show: { y: 0, opacity: 1 },
-  };
-
   return (
     <motion.nav
       className="flex justify-between items-center py-6 px-4 md:px-6"
@@ -89,11 +84,6 @@ export default function Navbar() {
             </Link>
           </motion.div>
         ))}
-        <motion.div variants={item}>
-          <Button className="bg-emerald-400 hover:bg-emerald-500 text-black rounded-full px-6">
-            Hire me
-          </Button>
-        </motion.div>
       </motion.div>
 
       {/* Mobile Menu */}
@@ -137,16 +127,6 @@ export default function Navbar() {
                     </Link>
                   </motion.div>
                 ))}
-                <motion.div
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: menuItems.length * 0.1 }}
-                  className="px-4 pt-4"
-                >
-                  <Button className="w-full bg-emerald-400 hover:bg-emerald-500 text-black rounded-full">
-                    Hire me
-                  </Button>
-                </motion.div>
               </AnimatePresence>
             </nav>
           </SheetContent>

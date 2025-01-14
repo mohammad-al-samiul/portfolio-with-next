@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Container from "@/components/ui/Container";
 
@@ -9,6 +10,7 @@ export default function CommonLayout({ children }: { children: ReactNode }) {
       <Container>
         <Navbar />
         {children}
+        <Footer />
       </Container>
     </div>
   );

@@ -45,7 +45,7 @@ export default function Hero() {
             repeat={Infinity}
             style={{ fontSize: "1em", display: "inline-block" }}
           />
-          <h1 className="text-4xl md:text-6xl font-mono font-bold space-y-2">
+          <h1 className="md:text-left text-6xl md:text-6xl font-mono font-bold space-y-2">
             <span className="block">Hello! I&apos;m </span>
             <span className="block text-emerald-400">Al Samiul</span>
           </h1>
